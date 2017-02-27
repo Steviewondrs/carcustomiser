@@ -1,15 +1,49 @@
-import Vue from 'vue';
-import Vuex from 'vuex';
+const state = {
 
-import ui from './store/ui';
-import car from './store/car';
+	/*** CAR ****/
+	// --- colors ----
+	chassisColor: '#dddddd',
+	interiorColor: '',
+	// wheel
+	rimColor: '',
+	fenderColor: '',
+	detailColor: '',
+	// --- part types ---
+	wheelType: 'default', 
+	lampType: 'default', 
+	// --- brands ---
+	brands: [],
+	selectedBrand: null,
 
-Vue.use( Vuex );
+	/*** UI ***/
+    sideBarOpen: false
 
-export default new Vuex.Store({
-	modules: {
-		ui,
-		car
+}
+
+const mutations = {
+	/*** CAR ***/
+	SET_COLOR( state, { part, color } ) {
+		state[ `${ part }Color`] = color;
+	},
+
+	SET_TYPE( state, { part, type } ) {
+		state[ `${ part }Type` ] = type;
+	},
+
+	SAVE_BRANDS( state, list ) {
+		state.brands = list;
+		state.selectedBrand = list[ 0 ];
+	},
+
+	FETCH_ERROR( state, error ) {
+		state.brands = [];
+		state.selectedBrand = null;
+	},
+
+	/*** UI  ****/
+    TOGGLE_SIDEBAR( state ) {
+		state.sideBarOpen = !state.sideBarOpen
 	}
-	// , strict: true
-});
+}
+
+export default { state, mutations };
