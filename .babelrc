@@ -1,5 +1,8 @@
 {
     "presets": [
-        ["latest", { "modules": false }]
+        ["latest", { "modules": false, "regenerator": true }]
+    ],
+     "plugins": [
+        "transform-regenerator"
     ]
 }
