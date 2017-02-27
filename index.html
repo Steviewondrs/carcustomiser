@@ -28,5 +28,16 @@
 
     <div id="app"></div>
     <script src="/dist/build.js"></script>
+
+    <script>
+      if( 'serviceWorker' in navigator ) {
+        navigator.serviceWorker
+          .register( 'service-worker.js' )
+          .then(  function( reg ) { 
+            console.log( '[ serviceWorker ]: Registered', reg.scope ); 
+          })
+          .catch( function( err ) { console.log( '[ serviceWorker ]: Registration failed', err); })
+      }
+    </script>
   </body>
 </html>
