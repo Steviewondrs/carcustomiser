@@ -36,8 +36,8 @@ self.onactivate = function( e ) {
         const cacheNames = await caches.keys();
         for( let key in cacheNames ) {
             if( whiteList.indexOf( key ) === -1 ) {
-                console.log( '[serviceWorker]: removing old cache', cache );
-                await caches.delete( cache );
+                console.log( '[serviceWorker]: removing old cache', key );
+                await caches.delete( key );
             } 
         }
 
@@ -60,7 +60,7 @@ self.onfetch = function( e ) {
     console.log( '[ serviceWorker ]: Fetch', e.request.url );
     const DATA_URL = 'https://car-api.firebaseio.com/rest.json';
 
-    if( e.request.url.indexOf( dataURL ) > -1 ) {
+    if( e.request.url.indexOf( DATA_URL ) > -1 ) {
         e.respondWith( ( async () => {
             let cache = await caches.open( CACHE_NAME );
             let response = await fetch( e.request );
