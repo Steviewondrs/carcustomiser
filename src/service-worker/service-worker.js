@@ -1,7 +1,7 @@
 const CACHE_NAME = 'car-customiser-V1';
 // Files we want to cache
 const filesToCache = [
-    '/',
+    './',
     './index.html',
     './manifest.json',
     // './serviceworker-cache-polyfill.js',
