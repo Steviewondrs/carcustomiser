@@ -1,18 +1,21 @@
 <template>
     <div id="app">
-        <h1> Car Customiser </h1>
-        <!--<ul>
-            <li><router-link to="/">/</router-link></li>
-        </ul>-->
-        <router-view></router-view>
+        <Navigation></Navigation>
+        <Sidebar></Sidebar>
+        <main>
+            <router-view></router-view>
+        </main>
     </div>
 </template>
 
 <script>
-    // export default {
-    //     name: 'app',
-    //     data() {
-    //         return { msg: 'Welcome to your Vue.js App!' }
-    //     }
-    // }
+    import Navigation from './Navigation.vue';
+    import SideBar from './Sidebar.vue';
+    
+    export default {
+        components: {
+            Navigation,
+            SideBar
+        }
+    }
 </script>

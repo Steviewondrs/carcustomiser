@@ -2,7 +2,5 @@
     "presets": [
         ["latest", { "modules": false, "regenerator": true }]
     ],
-     "plugins": [
-        "transform-regenerator"
-    ]
+    "plugins": ["transform-object-rest-spread"]
 }

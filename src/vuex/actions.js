@@ -1,18 +1,19 @@
-import fetchBrands from '../../API/brandsProxy';
+import fetchBrands from '../API/brandsProxy';
 
 // these are like actionCreators from Redux, but with Promises built in...
-
-export const SET_COLOR = 'SET_COLOR'
-export const setColor = ({ dispatch }, color, part ) => {
-	dispatch( SET_COLOR, { color, part });
+export const setColor = ({ commit }, color, part ) => {
+	commit( 'SET_COLOR', { color, part });
 }
 
-export const SET_PARTTYPE = 'SET_PARTTYPE';
-export const setPartType = ({ dispatch }, type, part )  => {
-	dispatch( SET_PARTTYPE, { type, part } );
+export const setPartType = ({ commit }, type, part )  => {
+	commit( 'SET_PARTTYPE', { type, part } );
 }
 
-export const API = createRequestTypes( 'BRANDS' );
+export const toggleSidebar = ({ commit }) => {
+	commit( 'TOGGLE_SIDEBAR' );
+}
+
+const API = createRequestTypes( 'BRANDS' );
 export const requestBrands = async ({ commit }) => {
 	try {
 		const brandsList = await fetchBrands();
@@ -23,12 +24,7 @@ export const requestBrands = async ({ commit }) => {
 	}
 }
 
-export const TOGGLE_SIDEBAR = 'TOGGLE_SIDEBAR';
-export const toggleSidebar = ({ dispatch }) => {
-	dispatch( TOGGLE_SIDEBAR );
-}
 
-// misc
 function createRequestTypes( name ) {
 	return {
 		SUCCESS: `${ name }SUCCESS`,

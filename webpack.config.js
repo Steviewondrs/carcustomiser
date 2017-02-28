@@ -3,7 +3,7 @@ var webpack = require('webpack')
 
 module.exports = {
   entry: {
-	  './dist/build': './src/main.js',
+	  './dist/build': ['babel-regenerator-runtime', './src/main.js'],
 	  './service-worker' : ['babel-regenerator-runtime', './src/service-worker/service-worker.js'] // needs to be at the root of the app to receive full application scope
   },
   output: {

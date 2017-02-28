@@ -8,5 +8,6 @@ import store from './vuex/index';
 new Vue({
     store,
     router,
-    render: h => h(App)
-}).$mount( '#app')
+    render: h => h(App),
+    el: '#app'
+})

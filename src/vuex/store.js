@@ -1,4 +1,4 @@
-const state = {
+export const state = {
 
 	/*** CAR ****/
 	// --- colors ----
@@ -20,7 +20,7 @@ const state = {
 
 }
 
-const mutations = {
+export const mutations = {
 	/*** CAR ***/
 	SET_COLOR( state, { part, color } ) {
 		state[ `${ part }Color`] = color;
@@ -45,5 +45,3 @@ const mutations = {
 		state.sideBarOpen = !state.sideBarOpen
 	}
 }
-
-export default { state, mutations };
