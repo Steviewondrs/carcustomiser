@@ -2,16 +2,11 @@ export const state = {
 
 	/*** CAR ****/
 	// --- colors ----
-	carColor: { hex: '#9CD279' },
-	// interior
-	interiorColor: 'deeppink',
-	// wheel
-	wheelColor: 'pink',
-	axleColor: 'deeppink',
-	// fender
-	fenderColor: 'deeppink',
-	// detailing
-	detailColor: 'deeppink',
+	carColor: { hex: '#ffc200' },
+	interiorColor: { hex: '#000000' },
+	wheelColor: { hex: '#FFFFFF' },
+	fenderColor: { hex: '#000000' },
+	detailColor: { hex: '#bd9d07' },
 
 	// --- part types ---
 	wheelType: 'default', 
@@ -28,7 +23,7 @@ export const state = {
 export const mutations = {
 	/*** CAR ***/
 	SET_COLOR( state, { part, color } ) {
-		state[ `${ part }Color`] = color;
+		state[ part ] = color;
 	},
 
 	SET_TYPE( state, { part, type } ) {
