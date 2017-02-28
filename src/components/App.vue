@@ -9,14 +9,17 @@
 </template>
 
 <script>
-    // import '../assets/sass/carcustomiser.scss';
     import Navigation from './Navigation.vue';
     import Sidebar from './Sidebar.vue';
-    
+    console.log( 'test123 ' );
     export default {
         components: {
             Navigation,
-            Sidebar
+            Sidebar,
         }
     }
 </script>
+
+<style lang="scss">
+    @import "../assets/sass/carcustomiser.scss";
+</style>
