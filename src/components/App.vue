@@ -9,6 +9,7 @@
 </template>
 
 <script>
+    // import '../assets/sass/carcustomiser.scss';
     import Navigation from './Navigation.vue';
     import Sidebar from './Sidebar.vue';
     
@@ -19,3 +20,7 @@
         }
     }
 </script>
+
+<style lang="scss">
+    @import '../assets/sass/carcustomiser.scss';
+</style>

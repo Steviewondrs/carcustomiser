@@ -1,0 +1,176 @@
+.container {
+    height: 100vh;
+    width: 100%;
+    padding: 100px;
+}
+
+
+$yellow: #ffc200;
+$gold: #bd9d07;
+$green: #166f31;
+$red: #b90d0d;
+$grey: #333333;
+
+@mixin spokes( $color ) {
+    background: 
+        linear-gradient( 0deg,   transparent 47%, $color 47%, $color 53%, transparent 53% ),
+        linear-gradient( 90deg,  transparent 47%, $color 47%, $color 53%, transparent 53% ),
+        linear-gradient( 45deg,  transparent 48%, $color 48%, $color 52%, transparent 52% ),
+        linear-gradient( 135deg, transparent 48%, $color 48%, $color 52%, transparent 52% ),
+        linear-gradient( 22.5deg,  transparent 48%, $color 48%, $color 52%, transparent 52% ),
+        linear-gradient( 67.5deg,  transparent 48%, $color 48%, $color 52%, transparent 52% ),
+        linear-gradient( 112.5deg, transparent 48%, $color 48%, $color 52%, transparent 52% ),
+        linear-gradient( 157.5deg, transparent 48%, $color 48%, $color 52%, transparent 52% );
+}
+
+@mixin tires( $color ) {
+    box-shadow: 
+        0 0 0 .02em $color,
+        0 0 0 .1em #181818,
+        0 0 0 .11em grey;
+}
+@mixin wheel( $color ) {
+    @include tires( $color );
+    &.spokes {
+        @include spokes( $color );
+    }
+}
+.car {
+    font-size: 100px;
+    position: relative;
+    
+    width: 4em;
+    height: 1em;
+    border-radius: .05em .05em .7em 0;
+    
+    .grill {
+        position: absolute;
+        height: 1em;
+        width: .2em;
+        border-radius: .05em 0 0 0;
+        background-color: $gold;
+    }
+    
+    .fenders {
+        position: absolute;
+        width: 2.05em;
+        height: .1em;
+        top: 0.95em;
+        left: 0.65em;
+        background-color: black;
+        
+        .front {
+            position: absolute;
+            
+            width: .9em; 
+            height: .7em;
+            background: transparent;
+            border-radius: 10% 100% 0 0;
+            
+            border-top: .1em solid black;
+            border-right: .1em solid black;
+            
+            top: -.7em;
+            left: -1em;
+        }
+        
+        .back {
+            position: absolute;
+            width: .9em;
+            height: .7em;
+            background: transparent;
+            
+            border-radius: 100% 10% 0 0;
+            border-top: .1em solid black;
+            border-left: .1em solid black;
+            
+            top: -.7em;
+            left: 2em;
+        }
+    }
+    
+    .wheel {
+        position: absolute;
+        width: .8em;
+        height: .8em;
+        border-radius: .5em;
+        
+        .axle {
+            content: '';
+            position: absolute;
+            width:  .15em;
+            height: .15em;
+            border-radius: 1em;
+            background-color: $gold;
+            top: .32em;
+            left: .32em;
+        }
+        
+        &.red    { @include wheel( $red ); }
+        &.yellow { @include wheel( $yellow ); }
+        &.green  { @include wheel( $green ); }
+        &.grey   { @include wheel( $grey ) ;}
+        
+        // position
+        &.front { top: .6em; left: -.4em; }
+        &.back  { top: .6em; left:   3em; }
+        &.spare { top: .1em; left:  .7em; }
+    }
+    
+    .lights {
+        .front, .back {
+            position: absolute;
+            width: .1em;
+            height: .2em;
+            background: $gold;
+            border-radius: 0 100% 100% 0;
+        }
+        
+        .front { top: .1em; left: -.2em; }
+        .back  { top: -.1em; left: 1.4em; }
+    }
+    
+    .doors {
+        position: absolute;
+        width: .6em;
+        height: .8em;
+        top: .05em;
+        left: 1.7em;
+        border: .02em solid $gold;
+        border-radius: 0 0 .1em .1em;
+    }
+    
+    .interior {
+        position: absolute;
+        width: .1em;
+        height: 1em;
+        
+        background: black;
+        
+        top: -.5em;
+        left: 1.5em;
+        
+        border-radius: .1em .1em 0 0;
+        z-index: -1;
+        
+        // steering wheel
+        &::before {
+            content: 'T';
+            font-family: Arial, Helvetica, sans-serif;
+            position: absolute;
+            transform: rotate( 45deg );
+        }
+    }
+    
+    .soft-top {
+        position: absolute;
+        width: 1.5em;
+        height: .5em;
+        background: black;
+
+        left: 3em;
+        top: -.4em;
+        border-radius: 100% 35% 10% 100% / 100% 90% 40% 50%;
+        // thx 2 irregular shape creator http://codepen.io/afranceschetti/pen/pRmbKY
+    }
+}

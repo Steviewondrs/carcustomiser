@@ -1,11 +1,10 @@
 <template>
-    <div>
-        <h1 class="header__title">Car Customiser</h1>
+    <header>
+        <h1>Car Customiser</h1>
         <button @click="toggleSidebar" id="btnMenu" class="btn-menu">
             MENU
         </button>
-        <button @click="requestBrands">Test</button>
-    </div>
+    </header>
 </template>
 
 <script>
@@ -13,9 +12,6 @@
         methods: {
             toggleSidebar( e ) {
                 this.$store.dispatch( 'toggleSidebar' );
-            },
-            requestBrands( e ) {
-                this.$store.dispatch( 'requestBrands' );
             }
         }
     }
