@@ -11,8 +11,6 @@ Check out the app [here](https://steviewondrs.github.io/carcustomiser)
 3. Build the app: ```$ npm run build```
 4. Run the app: ```$ npm run dev```
 
-Hot-swapping the service-worker is not possible. So rebuild the app after every change there.
-
 # About
 
 This little app is a small commission for a job application.
@@ -23,3 +21,13 @@ These are a few things that I learned over the course of three days and used for
 * ES7 features like 'Async-Await'
 * Some nice Webpack tricks
 * Drawing pictures using only HTML and CSS
+
+# Notes
+
+I implemented this app as a progressive web app. That means that you can install it on any of your devices
+and use it offline!
+
+Though it is a nice feature, I'm having inconsistent experiences with the ServiceWorkers: loading it on my mobile device results
+in a mix of old or new caches.
+
+Installing it the first time shouldn't prove troublesome.

@@ -1,3 +1,7 @@
 <template>
-    <h1>not implemented yet </h1>
+    <aside>
+        <ul>
+            <li><a href="https://github.com/Steviewondrs/carcustomiser">About</a></li>
+        </ul>
+    </aside>
 </template>

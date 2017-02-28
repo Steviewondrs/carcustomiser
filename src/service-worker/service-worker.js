@@ -4,7 +4,6 @@ const filesToCache = [
     './',
     './index.html',
     './manifest.json',
-    // './serviceworker-cache-polyfill.js',
     './src/assets/img/favicon.ico',
     './src/assets/img/icon48.png',
     './src/assets/img/icon72.png',
