@@ -1,4 +1,4 @@
-const CACHE_NAME = 'car-customiser-V1';
+const CACHE_NAME = 'car-customiser-V2';
 // Files we want to cache
 const filesToCache = [
     './',
