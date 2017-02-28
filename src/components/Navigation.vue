@@ -1,9 +1,9 @@
 <template>
     <header>
-        <h1>Car Customiser</h1>
         <button @click="toggleSidebar" id="btnMenu" class="btn-menu">
             MENU
         </button>
+        <h1>Car Customiser</h1>
     </header>
 </template>
 

@@ -41,7 +41,10 @@
     export default {
         computed: mapState({
             carStyles:         state => ({ backgroundColor: state.carColor.hex }),
-            interiorStyles:    state => ({ backgroundColor: state.interiorColor.hex }),
+            interiorStyles:    state => ({ 
+                backgroundColor: state.interiorColor.hex,
+                color: state.interiorColor.hex
+             }),
             wheelStyles:       state => ({ backgroundColor: state.wheelColor.hex }),
             fenderStyles:      state => ({ backgroundColor: state.fenderColor.hex }),
             frontFenderStyles: state => ({

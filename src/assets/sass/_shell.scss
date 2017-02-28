@@ -1,4 +1,5 @@
-// @import url('https://fonts.googleapis.com/css?family=Atomic+Age');
+@import url('https://fonts.googleapis.com/css?family=Atomic+Age');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
 body {
     margin: 0;
@@ -9,6 +10,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    
+    font-family: 'Open Sans', sans-serif;
 
     header {
         background: dodgerblue;
@@ -21,11 +24,43 @@ body {
         width: 100%;
 
         font-weight: 400;
-        // font-family: 'Atomic Age', cursive;
+        font-family: 'Atomic Age', cursive;
 
         h1 {
             font-size: 1.5em;
             padding: 0 1em;
+        }
+
+        button {
+            outline: none;
+            border: none;
+            background: transparent;
+            cursor: pointer;
+        }
+    }
+
+    .editor {
+        // background: pink;
+        // background: hotpink;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .config > ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .config > ul > li {
+            list-style: none;
+            margin: 1em;
+
+            label {
+                padding: .5em 0;
+                color: #777;
+            }
         }
     }
 }

@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="editor">
         <Car></Car>
         <Config></Config>
     </div>
