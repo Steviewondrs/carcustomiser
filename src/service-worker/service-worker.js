@@ -1,7 +1,7 @@
 const CACHE_NAME = 'car-customiser-V2';
 // Files we want to cache
 const filesToCache = [
-    './',
+    // './',
     './index.html',
     './manifest.json',
     './src/assets/img/favicon.ico',
