@@ -1,6 +1,19 @@
 <template>
-   
-    <div class="container">
+    <section class="container">
+        <div class="car" :style="bgCarColor"></div>
+    </section>
+</template>
+
+<script>
+    import { mapState } from 'vuex';
+
+    export default {
+        computed: mapState({
+            bgCarColor: state => ({ backgroundColor: state.carColor.hex }),
+        })
+    }
+
+    /*
         <div class="car" style="background-color: #ffc200">
             <div class="grill" style="background-color: #bd9d07"></div>
             <div class="fenders" style="background-color: #000000">
@@ -26,9 +39,5 @@
             <div class="doors" style="border-color: #bd9d07"></div>
             <div class="soft-top" style="background-color: #000000"></div>
         </div>
-    </div>
-</template>
-
-<script>
-    
+    */
 </script>

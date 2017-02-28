@@ -2,12 +2,17 @@ export const state = {
 
 	/*** CAR ****/
 	// --- colors ----
-	chassisColor: '#dddddd',
-	interiorColor: '',
+	carColor: { hex: '#9CD279' },
+	// interior
+	interiorColor: 'deeppink',
 	// wheel
-	rimColor: '',
-	fenderColor: '',
-	detailColor: '',
+	wheelColor: 'pink',
+	axleColor: 'deeppink',
+	// fender
+	fenderColor: 'deeppink',
+	// detailing
+	detailColor: 'deeppink',
+
 	// --- part types ---
 	wheelType: 'default', 
 	lampType: 'default', 
