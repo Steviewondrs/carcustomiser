@@ -10,12 +10,12 @@
 
 <script>
     import Navigation from './Navigation.vue';
-    import SideBar from './Sidebar.vue';
+    import Sidebar from './Sidebar.vue';
     
     export default {
         components: {
             Navigation,
-            SideBar
+            Sidebar
         }
     }
 </script>

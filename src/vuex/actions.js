@@ -13,22 +13,12 @@ export const toggleSidebar = ({ commit }) => {
 	commit( 'TOGGLE_SIDEBAR' );
 }
 
-const API = createRequestTypes( 'BRANDS' );
 export const requestBrands = async ({ commit }) => {
 	try {
 		const brandsList = await fetchBrands();
 		console.log( brandsList );
-		commit( API.SUCCESS, brandsList );
+		commit( 'API_BRANDS_SUCCESS', brandsList );
 	} catch( error ) {
-		commit( API.ERROR, error );
-	}
-}
-
-
-function createRequestTypes( name ) {
-	return {
-		SUCCESS: `${ name }SUCCESS`,
-		ERROR  : `${ name }ERROR`,
-		REQUEST: `${ name }REQUEST`
+		commit( 'API_BRANDS_ERROR', error );
 	}
 }

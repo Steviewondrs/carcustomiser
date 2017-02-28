@@ -30,12 +30,12 @@ export const mutations = {
 		state[ `${ part }Type` ] = type;
 	},
 
-	SAVE_BRANDS( state, list ) {
+	API_BRANDS_SUCCESS( state, list ) {
 		state.brands = list;
 		state.selectedBrand = list[ 0 ];
 	},
 
-	FETCH_ERROR( state, error ) {
+	API_BRANDS_ERROR( state, error ) {
 		state.brands = [];
 		state.selectedBrand = null;
 	},

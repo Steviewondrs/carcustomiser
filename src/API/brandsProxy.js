@@ -8,7 +8,7 @@ export default async function fetchBrands() {
             cache: 'default'
         });
 
-        return response.json;
+        return response.json();
     } catch ( error ) {
         console.log( 'loading failed', error );
         throw new Error( error );

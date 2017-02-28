@@ -4,6 +4,7 @@
         <button @click="toggleSidebar" id="btnMenu" class="btn-menu">
             MENU
         </button>
+        <button @click="requestBrands">Test</button>
     </div>
 </template>
 
@@ -12,6 +13,9 @@
         methods: {
             toggleSidebar( e ) {
                 this.$store.dispatch( 'toggleSidebar' );
+            },
+            requestBrands( e ) {
+                this.$store.dispatch( 'requestBrands' );
             }
         }
     }
