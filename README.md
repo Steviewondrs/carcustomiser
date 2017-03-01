@@ -29,5 +29,3 @@ and use it offline!
 
 Though it is a nice feature, I'm having inconsistent experiences with the ServiceWorkers: loading it on my mobile device results
 in a mix of old or new caches.
-
-Installing it the first time shouldn't prove troublesome.

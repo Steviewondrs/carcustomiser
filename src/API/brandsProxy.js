@@ -4,7 +4,7 @@ export default async function fetchBrands() {
     try {
         let response = await fetch( URL, {
             method: 'GET',
-            mode: 'cors',
+            mode: 'no-cors',
             cache: 'default'
         });
         
