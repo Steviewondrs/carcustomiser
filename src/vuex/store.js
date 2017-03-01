@@ -10,11 +10,11 @@ export const state = {
 
 	// --- part types ---
 	spokesVisible: true,
-	spokesColorClass: 'blue',
+	spokesColorClass: 'red',
 
 	// --- brands ---
 	brands: [],
-	selectedBrand: null,
+	selectedBrand: undefined,
 
 	/*** UI ***/
     sideBarOpen: false
@@ -46,7 +46,7 @@ export const mutations = {
 
 	API_BRANDS_ERROR( state, error ) {
 		state.brands = [];
-		state.selectedBrand = null;
+		state.selectedBrand = undefined;
 	},
 
 	/*** UI  ****/

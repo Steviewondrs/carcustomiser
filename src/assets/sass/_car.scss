@@ -155,6 +155,10 @@ $blue: #0062b1;
         left: 1.7em;
         border: .03em solid $gold;
         border-radius: 0 0 .1em .1em;
+
+        background-size: 2.5em;
+        background-position: center;
+        background-repeat: no-repeat;
     }
     
     .interior {
@@ -189,5 +193,14 @@ $blue: #0062b1;
         top: -.4em;
         border-radius: 100% 35% 10% 100% / 100% 90% 40% 50%;
         // thx 2 irregular shape creator http://codepen.io/afranceschetti/pen/pRmbKY
+    }
+
+    img.brand {
+        position: absolute;
+        height: auto;
+        width: .5em;
+
+        left: 1.8em;
+        top: .2em;
     }
 }
