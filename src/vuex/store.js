@@ -9,8 +9,9 @@ export const state = {
 	detailColor: { hex: '#bd9d07' },
 
 	// --- part types ---
-	wheelType: 'default', 
-	lampType: 'default', 
+	spokesVisible: true,
+	spokesColorClass: 'blue',
+
 	// --- brands ---
 	brands: [],
 	selectedBrand: null,

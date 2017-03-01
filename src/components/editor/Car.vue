@@ -12,13 +12,13 @@
             <div class="interior" :style="interiorStyles"></div>
             <!-- Wheels -->
             <div class="wheels">
-                <div class="wheel front spokes yellow" :style="wheelStyles">
+                <div class="wheel front" :class="wheelType" :style="wheelStyles">
                     <div class="axle" :style="detailStyles"></div>
                 </div>
-                <div class="wheel back spokes yellow" :style="wheelStyles">
+                <div class="wheel back" :class="wheelType" :style="wheelStyles">
                     <div class="axle" :style="detailStyles"></div>
                 </div>
-                <div class="wheel spare spokes red" :style="wheelStyles">
+                <div class="wheel spare" :class="wheelType" :style="wheelStyles">
                     <div class="axle" :style="detailStyles"></div>
                 </div>
             </div>
@@ -57,6 +57,11 @@
             }),
             detailStyles: state => ({ backgroundColor: state.detailColor.hex }),
             doorStyles: state => ({ borderColor: state.detailColor.hex }),
+            wheelType: state => {
+                return state.spokesVisible 
+                    ? `spokes ${ state.spokesColorClass }`
+                    : state.spokesColorClass;
+            }
         })
     }
 

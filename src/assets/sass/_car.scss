@@ -14,19 +14,18 @@
     }
 }
 
-@include queries( 120px );
-@include queries( 240px );
-@include queries( 360px );
-@include queries( 480px );
-@include queries( 520px );
-@include queries( 960px );
+$i: 120;
+@while $i <= 960 {
+    @include queries( $i * 1px);
+    $i: $i + 120;
+}
 
 
 $yellow: #ffc200;
 $gold: #bd9d07;
 $green: #166f31;
 $red: #b90d0d;
-$grey: #333333;
+$blue: #0062b1;
 
 @mixin spokes( $color ) {
     background: 
@@ -127,7 +126,7 @@ $grey: #333333;
         &.red    { @include wheel( $red ); }
         &.yellow { @include wheel( $yellow ); }
         &.green  { @include wheel( $green ); }
-        &.grey   { @include wheel( $grey ) ;}
+        &.blue   { @include wheel( $blue ) ;}
         
         // position
         &.front { top: .6em; left: -.4em; }
@@ -154,7 +153,7 @@ $grey: #333333;
         height: .8em;
         top: .05em;
         left: 1.7em;
-        border: .02em solid $gold;
+        border: .03em solid $gold;
         border-radius: 0 0 .1em .1em;
     }
     
