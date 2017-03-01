@@ -40,6 +40,10 @@ export const mutations = {
 		state.selectedBrand = list[ 0 ];
 	},
 
+	SET_BRAND( state, brand ) {
+		state.selectedBrand = brand;
+	},
+
 	API_BRANDS_ERROR( state, error ) {
 		state.brands = [];
 		state.selectedBrand = null;

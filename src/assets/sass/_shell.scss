@@ -73,23 +73,44 @@ body {
 
             display: flex;
             align-items: center;
+            
 
             ul {
                 display: flex;
-                flex-wrap: wrap;
-                max-width: 40px;
+                &.colorswatches {
+                    flex-wrap: wrap;
+                    max-width: 40px;
+                }
+
+                &.brands {
+                    align-items: center;
+                    padding: 0;
+                    width: 100%;
+                    justify-content: space-around;
+
+                }
+
             }
 
             ul > li {
                 list-style: none;
+                cursor: pointer;  
+            }
+
+            ul.colorswatches > li {
                 width: 15px;
                 height: 15px;
                 background: hotpink;
                 position: relative;
                 margin-right: 5px;
                 margin-bottom: 5px;
-                cursor: pointer;
-                
+            }
+
+            ul.brands > li {
+                img{
+                    width: auto;
+                    height: 3em;
+                }
             }
         }
     }

@@ -7,7 +7,7 @@ export default async function fetchBrands() {
             mode: 'cors',
             cache: 'default'
         });
-
+        
         return response.json();
     } catch ( error ) {
         console.log( 'loading failed', error );

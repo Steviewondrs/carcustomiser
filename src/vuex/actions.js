@@ -5,8 +5,8 @@ export const setColor = ({ commit }, { color, part } ) => {
 	commit( 'SET_COLOR', { color, part });
 }
 
-export const setPartType = ({ commit }, { type, part } )  => {
-	commit( 'SET_PARTTYPE', { type, part } );
+export const setCarBrand = ({ commit }, brand )  => {
+	commit( 'SET_BRAND', brand );
 }
 
 export const toggleSidebar = ({ commit }) => {
@@ -24,7 +24,6 @@ export const setSpokesColor = ({ commit }, colorClass ) => {
 export const requestBrands = async ({ commit }) => {
 	try {
 		const brandsList = await fetchBrands();
-		console.log( brandsList );
 		commit( 'API_BRANDS_SUCCESS', brandsList );
 	} catch( error ) {
 		commit( 'API_BRANDS_ERROR', error );
