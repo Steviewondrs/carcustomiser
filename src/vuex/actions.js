@@ -13,6 +13,14 @@ export const toggleSidebar = ({ commit }) => {
 	commit( 'TOGGLE_SIDEBAR' );
 }
 
+export const setSpokesVisible = ({ commit }, val) => {
+	commit( 'TOGGLE_SPOKES', val );
+};
+
+export const setSpokesColor = ({ commit }, colorClass ) => {
+	commit( 'SET_SPOKES_COLOR', colorClass);
+}
+
 export const requestBrands = async ({ commit }) => {
 	try {
 		const brandsList = await fetchBrands();

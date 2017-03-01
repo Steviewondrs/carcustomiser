@@ -27,8 +27,12 @@ export const mutations = {
 		state[ part ] = color;
 	},
 
-	SET_TYPE( state, { part, type } ) {
-		state[ `${ part }Type` ] = type;
+	TOGGLE_SPOKES( state, val ) {
+		state.spokesVisible = val;
+	},
+
+	SET_SPOKES_COLOR( state, colorClass ) {
+		state.spokesColorClass = colorClass;
 	},
 
 	API_BRANDS_SUCCESS( state, list ) {

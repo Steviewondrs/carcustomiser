@@ -26,6 +26,19 @@
 				<ColorPicker id="detailColor" :value="detailColor" 
 					@change-color="setColor('detailColor', $event)"></ColorPicker>
 			</li>
+			<li>
+				<label>Spokes</label>
+				<div class="configitem">
+					<label for="cbx_spokes">Spoked Wheel</label>
+					<input id="cbx_spokes" type="checkbox" :checked="spokesVisible" @change="setSpokesVisible">
+					<ul class="colorswatches">
+						<li class="blue"   @click="setSpokesColor( 'blue' )"   style="background-color: #0062b1"></li>
+						<li class="red"    @click="setSpokesColor( 'red' )"    style="background-color: #b90d0d"></li>
+						<li class="green"  @click="setSpokesColor( 'green' )"  style="background-color: #166f31"></li>
+						<li class="yellow" @click="setSpokesColor( 'yellow' )" style="background-color: #ffc200"></li>
+					</ul>
+				</div>
+			</li>
 		</ul>
     </section>
 </template>
@@ -44,11 +57,17 @@
 			wheelColor: state => state.wheelColor,
 			fenderColor: state => state.fenderColor,
 			detailColor: state => state.detailColor,
+			spokesVisible: state => state.spokesVisible
 		}),
 		methods: {
 			setColor( part, color ) {
-				console.log( part );
 				this.$store.dispatch( 'setColor', { part, color } );
+			},
+			setSpokesColor( colorClass ) {
+				this.$store.dispatch( 'setSpokesColor', colorClass );
+			},
+			setSpokesVisible( e ) {
+				this.$store.dispatch( 'setSpokesVisible', e.target.checked );
 			}
 		}
 	}

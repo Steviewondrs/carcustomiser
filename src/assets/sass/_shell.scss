@@ -62,6 +62,36 @@ body {
                 color: #777;
             }
         }
+
+        // inspired by vue-color
+        .configitem {
+            box-shadow: 0 2px 10px rgba(0,0,0,.12), 0 2px 5px rgba(0,0,0,.16);
+            width: 240px;
+            height: 60px;
+            padding-top: 5px;
+            padding-left: 5px;
+
+            display: flex;
+            align-items: center;
+
+            ul {
+                display: flex;
+                flex-wrap: wrap;
+                max-width: 40px;
+            }
+
+            ul > li {
+                list-style: none;
+                width: 15px;
+                height: 15px;
+                background: hotpink;
+                position: relative;
+                margin-right: 5px;
+                margin-bottom: 5px;
+                cursor: pointer;
+                
+            }
+        }
     }
 
     aside {  
