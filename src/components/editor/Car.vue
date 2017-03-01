@@ -31,8 +31,6 @@
             <div class="doors" :style="doorStyles"></div>
             <!-- Soft Top -->
             <div class="soft-top" :style="interiorStyles"></div>
-            <!-- Brand -->
-            <!--<img class="brand" v-if="isBrandSet" :src="selectedBrand.logoUrl" :alt="selectedBrand.make">-->
         </div>
     </section>
 </template>
