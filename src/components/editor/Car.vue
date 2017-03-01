@@ -56,44 +56,20 @@
                 borderLeftColor: state.fenderColor.hex
             }),
             detailStyles: state => ({ backgroundColor: state.detailColor.hex }),
-            doorStyles: state => ({ borderColor: state.detailColor.hex }),
+            doorStyles: state => ({ 
+                borderColor: state.detailColor.hex,
+                backgroundImage: state.selectedBrand !== undefined 
+                    ? `url( ${state.selectedBrand.logoUrl} )` 
+                    : ''
+             }),
             wheelType: state => {
                 return state.spokesVisible 
                     ? `spokes ${ state.spokesColorClass }`
                     : state.spokesColorClass;
-            }
+            },
+            selectedBrand: state => state.selectedBrand,
+            isBrandSet: state => typeof state.selectedBrand !== 'undefined'
         })
     }
 
-    /*
-        <div class="car" style="background-color: #ffc200">
-            <div class="grill" style="background-color: #bd9d07"></div>
-            <div class="fenders" style="background-color: #000000">
-            <div class="front" style="border-top-color: #000; border-right-color: #000"></div>
-            <div class="back" style="border-top-color: #000; border-left-color: #000"></div>
-            </div>
-            <div class="interior" style="background-color: #000000; color: #000"></div>
-            <div class="wheels">
-            <div class="wheel front spokes yellow" style="background-color: #FFF">
-                <div class="axle" style="background-color: #bd9d07"></div>
-            </div>
-            <div class="wheel back spokes yellow" style="background-color: #FFF">
-                <div class="axle" style="background-color: #bd9d07"></div>
-            </div>
-            <div class="wheel spare spokes red" style="background-color: #FFF">
-                <div class="axle" style="background-color: #bd9d07"></div>
-            </div>
-            </div>
-            <div class="lights">
-            <div class="front" style="background-color: #bd9d07"></div>
-            <div class="back" style="background-color: #bd9d07"></div>
-            </div>
-            <div class="doors" style="border-color: #bd9d07"></div>
-            <div class="soft-top" style="background-color: #000000"></div>
-        </div>
-    */
 </script>
-
-<!--<style lang="scss">
-    @import '../../assets/sass/carcustomiser.scss';
-</style>-->
