@@ -32,10 +32,20 @@
 					<label for="cbx_spokes">Spoked Wheel</label>
 					<input id="cbx_spokes" type="checkbox" :checked="spokesVisible" @change="setSpokesVisible">
 					<ul class="colorswatches">
-						<li class="blue"   @click="setSpokesColor( 'blue' )"   style="background-color: #0062b1"></li>
-						<li class="red"    @click="setSpokesColor( 'red' )"    style="background-color: #b90d0d"></li>
-						<li class="green"  @click="setSpokesColor( 'green' )"  style="background-color: #166f31"></li>
-						<li class="yellow" @click="setSpokesColor( 'yellow' )" style="background-color: #ffc200"></li>
+						<li @click="setSpokesColor( 'blue' )"   style="background-color: #0062b1"></li>
+						<li @click="setSpokesColor( 'red' )"    style="background-color: #b90d0d"></li>
+						<li @click="setSpokesColor( 'green' )"  style="background-color: #166f31"></li>
+						<li @click="setSpokesColor( 'yellow' )" style="background-color: #ffc200"></li>
+					</ul>
+				</div>
+			</li>
+			<li>
+				<label>Brands</label>
+				<div class="configitem">
+					<ul class="brands">
+						<li v-for="item in brands">
+							<img :src="item.logoUrl" :alt="item.make" @click="setCarBrand( item )">
+						</li>
 					</ul>
 				</div>
 			</li>
@@ -46,6 +56,7 @@
 <script>
 	import { mapState } from 'vuex';
 	import { Slider, Compact } from 'vue-color'; 
+	
 
 	export default {
 		components: {
@@ -57,7 +68,8 @@
 			wheelColor: state => state.wheelColor,
 			fenderColor: state => state.fenderColor,
 			detailColor: state => state.detailColor,
-			spokesVisible: state => state.spokesVisible
+			spokesVisible: state => state.spokesVisible,
+			brands: state => state.brands
 		}),
 		methods: {
 			setColor( part, color ) {
@@ -68,7 +80,16 @@
 			},
 			setSpokesVisible( e ) {
 				this.$store.dispatch( 'setSpokesVisible', e.target.checked );
+			},
+			requestBrands() {
+				this.$store.dispatch( 'requestBrands' );
+			},
+			setCarBrand( brand ) {
+				this.$store.dispatch( 'setCarBrand', brand );
 			}
+		},
+		mounted() {
+			this.requestBrands();
 		}
 	}
 </script>
