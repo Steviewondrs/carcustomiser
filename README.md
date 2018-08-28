@@ -13,9 +13,9 @@ Check out the app [here](https://steviewondrs.github.io/carcustomiser)
 
 # About
 
-This little app is a small commission for a job application.
+This little app was commissioned to test my front-end skills.
 
-This app was a great way to learn the concepts of building a progressive web-app.
+Making it was a great way to learn the concepts of building a progressive web-app.
 These are a few things that I learned over the course of three days and used for the very first time:
 * ServiceWorkers (pfff, this one was a real head-scratcher).
 * ES7 features like 'Async-Await'
